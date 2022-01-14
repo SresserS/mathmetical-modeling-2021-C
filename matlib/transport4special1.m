@@ -1,0 +1,9 @@
+f=xlsread('C:\Users\LENOVO\Desktop\cnew\transport4special\week1.xlsx',1,'M2:M2006');
+ic=xlsread('C:\Users\LENOVO\Desktop\cnew\transport4special\week1.xlsx',1,'R2:R2006');
+A=xlsread('C:\Users\LENOVO\Desktop\cnew\transport4special\week1.xlsx',1,'T2:X2006')';
+b=[6000;6000;6000;6000;6000];
+Aeq=xlsread('C:\Users\LENOVO\Desktop\cnew\transport4special\week1.xlsx',1,'Z2:BZB402');
+beq=xlsread('C:\Users\LENOVO\Desktop\cnew\transport4special\week1.xlsx',1,'G2:G402');
+lb=zeros(2005,1);
+ub=ones(2005,1);
+[x,fval]=intlinprog(f,ic,A,b,Aeq,beq,lb,ub);
